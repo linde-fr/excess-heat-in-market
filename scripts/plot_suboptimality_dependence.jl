@@ -163,7 +163,7 @@ plot!(1:12, save_eh_m_s'[:,choose]/yscale, xlabel="month",
     label=reshape(["self-scheduling", :none,:none], (1,3)), color=:gray)
 plot!(1:12, save_eh_m_s'[:,choose]/yscale,lw=3,
     label=nms[:,choose], color=clrs, xtickfontsize=16, ytickfontsize=16,
-    legendfontsize=18,
+    legendfontsize=16,
     grid="x",  guidefontsize=16, fontfamily="Computer Modern")
 plot!(1:12, save_eh_m_m'[:,choose]/yscale,color=clrs, linestyle=:dash,lw=3,
     background_color_legend = nothing, legend=(100,:inner),
