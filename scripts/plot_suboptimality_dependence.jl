@@ -136,7 +136,7 @@ plot(1:12, percent_decrease'[:,choose] .* 100 , xlabel="month",
     ylabel="decrease in total cost if integrate in market [%]", xticks=xtick,
     label=nms)
 
-# plot montly decrease for chosen ones
+# plot monthly decrease for chosen ones
 choose = [1,2,4]
 clrs = reshape(palette(:default)[1:3], (1,length(choose)))
 plot(1:12, save_c_m_s'[:,choose]/yscale, xlabel="month",
@@ -168,9 +168,9 @@ plot!(1:12, save_eh_m_s'[:,choose]/yscale,lw=3,
 plot!(1:12, save_eh_m_m'[:,choose]/yscale,color=clrs, linestyle=:dash,lw=3,
     background_color_legend = nothing, legend=(100,:inner),
     foreground_color_legend = nothing, label=:none, (1,3),  ylims=(-0.1,1.35))
-montly_load = [sum(load_heat_hourly[
+monthly_load = [sum(load_heat_hourly[
         Dates.value.(Month.(time_list_hourly)) .== m_nr]) for m_nr in 1:12]
-scatter!(1:12, montly_load / yscale, label="montly load", color=:black,
+scatter!(1:12, monthly_load / yscale, label="monthly load", color=:black,
         markersize=5)
 savefig("figs/monthly_scheduled_volume.pdf")
 
@@ -190,7 +190,7 @@ plot!(1:12, save_weh_m_s'[:,choose]/yscale,
 plot!(1:12, save_weh_m_m'[:,choose]/yscale,color=clrs, linestyle=:dash,  lw=3,
     foreground_color_legend = nothing, label=:none, (1,3), ylims=(-0.1,1.35),
     legend=:topleft, background_color_legend = nothing)
-savefig("figs/montly_wasted_excessheat.pdf")
+savefig("figs/monthly_wasted_excessheat.pdf")
 
 ## market price
 choose = [1,2,4]
